@@ -1,0 +1,55 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("How many calculations would you like to perform? ");
+        int numberOfCalculations = sc.nextInt();
+        for (int i = 1; i <= numberOfCalculations; i++) {
+            System.out.println("\n--- Calculation " + i + " of " + numberOfCalculations + " ---");
+            System.out.print("Enter first number: ");
+            double num1 = sc.nextDouble();
+            System.out.print("Enter an operator (+, -, *, /, %): ");
+            char operator = sc.next().charAt(0);
+            System.out.print("Enter second number: ");
+            double num2 = sc.nextDouble();
+            double result;
+            switch (operator) {
+                case '+':
+                    result = num1 + num2;
+                    System.out.println("Result: " + num1 + " + " + num2 + " = " + result);
+                    break;
+                case '-':
+                    result = num1 - num2;
+                    System.out.println("Result: " + num1 + " - " + num2 + " = " + result);
+                    break;
+                case '*':
+                    result = num1 * num2;
+                    System.out.println("Result: " + num1 + " * " + num2 + " = " + result);
+                    break;
+                case '/':
+                    if (num2 != 0) {
+                        result = num1 / num2;
+                        System.out.println("Result: " + num1 + " / " + num2 + " = " + result);
+                    } else {
+                        System.out.println("Error: Cannot divide by zero.");
+                    }
+                    break;
+                case '%':
+                    if (num2 != 0) {
+                        result = num1 % num2;
+                        System.out.println("Result: " + num1 + " % " + num2 + " = " + result);
+                    } else {
+                        System.out.println("Error: Cannot find modulo with zero.");
+                    }
+                    break;
+                default:
+                    System.out.println("Error: Invalid operator.");
+                    break;
+            }
+        }
+        
+        System.out.println("\nAll calculations finished. Goodbye!");
+        sc.close();
+    }
+}
