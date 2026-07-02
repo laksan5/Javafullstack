@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+        String userName = "Admin@gmail.com";
+        String password = "Admin@123";
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter your Username:");
+        String uname = sc.nextLine();
+        System.out.print("Enter your Password:");
+        String pass = sc.nextLine();
+        if(userName.equals(uname) && password.equals(pass)){
+            System.out.println("Welcome to homepage");
+        }
+        else{
+            System.out.println("The given data is invalid");
+        }
+        sc.close();
+    }
+}
