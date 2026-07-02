@@ -1,0 +1,32 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        String s = scan.nextLine();
+        // 1. Remove leading and trailing whitespace
+s = s.trim();
+
+// 2. Edge case: If the string is empty after trimming, print 0 and exit
+if (s.length() == 0) {
+    System.out.println(0);
+    return;
+}
+
+// 3. Split the string using a Regular Expression
+// [^A-Za-z]+ means "split by one or more characters that are NOT letters"
+String[] tokens = s.split("[^A-Za-z]+");
+
+// 4. Print the total number of tokens found
+System.out.println(tokens.length);
+
+// 5. Loop through the array and print each token on a new line
+for (String token : tokens) {
+    System.out.println(token);
+}
+        scan.close();
+    }
+}
+
