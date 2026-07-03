@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter a number to find its factors: ");
+        int number = scanner.nextInt();
+        
+        System.out.print("Factors of " + number + " are: ");
+        
+        // Loop from 1 up to the number itself
+        for (int i = 1; i <= number; i++) {
+            // If the remainder is 0, 'i' is a factor
+            if (number % i == 0) {
+                System.out.print(i + " ");
+            }
+        }
+        
+        System.out.println(); // Print a new line at the end
+        scanner.close();
+    }
+}
